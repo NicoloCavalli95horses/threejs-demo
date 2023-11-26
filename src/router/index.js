@@ -22,6 +22,16 @@ const router = createRouter({
       name: "basics",
       component: () => import("../views/Basics.vue"),
     },
+    {
+      path: "/animations",
+      name: "animations",
+      component: () => import("../views/Animations.vue"),
+    },
+    {
+      path: "/camera",
+      name: "camera",
+      component: () => import("../views/Camera.vue"),
+    },
   ],
 });
 

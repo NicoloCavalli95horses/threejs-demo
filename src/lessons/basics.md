@@ -1,5 +1,4 @@
-#Lesson 04 - Transform objects
-
+# Basics
 There are 4 properties to transform objects in our scene
 
 1. position (to move the object)
@@ -18,9 +17,12 @@ The position property is not any object. It's an instance of the Vector3 class. 
 - position.normalize()
 
 To change the values, instead of changing x, y and z separately, you can also use the set(...) method:
-- mesh.position.set(0.7, -0.6, 1) //x, y, z
+```javascript
+mesh.position.set(0.7, -0.6, 1) //x, y, z
 
 mesh.reorder('YXZ') // the order of the rotation is changed. Y axes is moved first
+
+```
 
 4. Quaternion
 Similar to the rotation property, it has to deal with other mathematical aspects of rotation. When you change a rotation, you change also the quaternion properties, and viceversa.
@@ -28,7 +30,9 @@ Similar to the rotation property, it has to deal with other mathematical aspects
 camera.lookAt( mesh.position ) // this automatically orientate the camera towars a 3D object
 
 
-##Groups
+## Groups
+
+```javascript
 const group = new THREE.Group();
 scene.add(group);
 
@@ -39,6 +43,8 @@ const cube3 = new THREE.Mesh( ..., ... );
 group.add(cube1);
 group.add(cube2);
 group.add(cube3);
+
+```
 
 You can apply all the previous method (scale, rotation) to a group
 
