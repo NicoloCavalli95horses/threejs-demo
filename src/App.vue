@@ -1,6 +1,6 @@
 <template>
-  <Btn class="back-btn" @click="$router.push('/')">Back</Btn>
   <RouterView />
+  <Btn v-if="$route.name != 'nav'" class="back-btn" @click="$router.push('/')">Back</Btn>
 </template>
 
 <script setup>
