@@ -16,7 +16,25 @@
     <RouterLink to="/camera">
       <div class="row">
         <h2>Camera</h2>
-        <p>Focus on how camera works</p>
+        <p>PerspectiveCamera, OrthographicCamera and OrbitControls</p>
+      </div>
+    </RouterLink>
+    <RouterLink to="/resizing">
+      <div class="row">
+        <h2>Full screen and resizing</h2>
+        <p>how to correctly resize webGL canvas</p>
+      </div>
+    </RouterLink>
+    <RouterLink to="/geometry">
+      <div class="row">
+        <h2>Geometry</h2>
+        <p>Three.js geometries and custom geometries</p>
+      </div>
+    </RouterLink>
+    <RouterLink to="/debug">
+      <div class="row">
+        <h2>Debug</h2>
+        <p>Structure a debug interface</p>
       </div>
     </RouterLink>
   </nav>
@@ -47,11 +65,11 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 560px;
+    min-width: 980px;
     cursor: pointer;
-    padding: 10px 16px;
+    padding: 14px 22px;
     background-color: transparent;
-    border-radius: var(--radius-s);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     &:hover {
       background-color: var(--primary);
       transition-duration: var(--transition-medium);

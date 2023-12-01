@@ -32,6 +32,21 @@ const router = createRouter({
       name: "camera",
       component: () => import("../views/Camera.vue"),
     },
+    {
+      path: "/resizing",
+      name: "resizing",
+      component: () => import("../views/Resizing.vue"),
+    },
+    {
+      path: "/geometry",
+      name: "geometry",
+      component: () => import("../views/Geometry.vue"),
+    },
+    {
+      path: "/debug",
+      name: "debug",
+      component: () => import("../views/Debug.vue"),
+    },
   ],
 });
 

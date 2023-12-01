@@ -1,6 +1,6 @@
 <template>
   <canvas ref="canvas_ref" />
-  <div class="mouse-ctrls">
+  <div class="top-right">
     <p>Zoom in and out with the mouse wheel</p><br>
     <p>Click and move the mouse to rotate the cube</p><br>
     <p>Shift and move the mouse to move the cube</p><br>
@@ -148,7 +148,7 @@ onMounted(() => {
   left: 22px;
 }
 
-.mouse-ctrls {
+.top-right {
   position: fixed;
   top: 22px;
   right: 22px;
