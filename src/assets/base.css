@@ -71,7 +71,6 @@ a,
 span,
 input,
 textarea,
-label,
 summary,
 details {
   font-family: "MontSerrat", sans-serif;
@@ -92,7 +91,6 @@ ul,
 li,
 a,
 span,
-label,
 summary,
 details {
   color: var(--font-light);

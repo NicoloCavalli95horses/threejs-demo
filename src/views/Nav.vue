@@ -34,7 +34,7 @@
     <RouterLink to="/debug">
       <div class="row">
         <h2>Debug</h2>
-        <p>Structure a debug interface</p>
+        <p>Structure a debug interface with lil-gui library</p>
       </div>
     </RouterLink>
   </nav>

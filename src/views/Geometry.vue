@@ -33,7 +33,7 @@ let controls;
 const camera = new THREE.PerspectiveCamera(FOV, aspect_ratio.value);
 
 // Set material
-const material = new THREE.MeshBasicMaterial({ color: "brown", wireframe: show_wireframe });
+const material = new THREE.MeshBasicMaterial({ color: "#222", wireframe: show_wireframe });
 
 // float 32 array: array of fixed length that can store only floats. Easier to handle for matrix calculations
 const positionsArray = new Float32Array(9); // length
@@ -109,7 +109,7 @@ const box_geometry = new THREE.BoxGeometry(
 /**
  * Render a cool torus instead
 */
-const torus = new THREE.TorusGeometry( 10, 3, 16, 100 );
+const torus = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
 const mesh = new THREE.Mesh(torus, material);
 scene.add(mesh);
 
