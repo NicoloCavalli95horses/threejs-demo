@@ -52,32 +52,36 @@
 //==================================
 import { RouterLink } from "vue-router";
 import { getViewport } from '../utils/screen_size.mjs';
-
 const device = getViewport();
 
 </script>
 
 <style lang="scss" scoped>
+$title-h: 88px;
 .title {
   width: 100%;
   text-align: center;
-  margin: 64px auto;
+  height: $title-h;
+  display: grid;
+  place-content: center;
 }
 nav {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 600px;
   max-width: 1100px;
   width: calc( 100% - 44px );
+  height: calc( 90vh - $title-h - 24px );
   overflow-y: scroll;
+  margin: 12px auto;
+  display: flex;
+  flex-direction: column;
   .row {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+    padding: 12px;
+    border-radius: var(--radius-s);
+    height: calc( $title-h / 2);
     align-items: center;
     cursor: pointer;
-    padding: 14px 22px;
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     &:hover {
