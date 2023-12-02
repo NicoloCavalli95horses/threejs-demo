@@ -37,6 +37,12 @@
         <p>Structure a debug interface with lil-gui library</p>
       </div>
     </RouterLink>
+    <RouterLink to="/texture">
+      <div class="row">
+        <h2>Texture</h2>
+        <p>Adding texture and effects to geometries</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 
@@ -60,12 +66,13 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%);
   max-height: 600px;
+  width: 80%;
+  min-width: 680px;
   overflow-y: scroll;
   .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 980px;
     cursor: pointer;
     padding: 14px 22px;
     background-color: transparent;

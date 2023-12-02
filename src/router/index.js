@@ -47,6 +47,11 @@ const router = createRouter({
       name: "debug",
       component: () => import("../views/Debug.vue"),
     },
+    {
+      path: "/texture",
+      name: "texture",
+      component: () => import("../views/Texture.vue"),
+    },
   ],
 });
 
