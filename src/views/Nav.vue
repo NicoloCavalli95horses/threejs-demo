@@ -1,27 +1,27 @@
 <template>
   <h1 class="title">Three.js journey</h1>
   <nav>
-    <RouterLink to="/basics">
+    <RouterLink to="/basics" :class="{ 'disabled' : device == 'mobile' }">
       <div class="row">
         <h2>Basics</h2>
         <p>Move camera, edit mesh, rotate mesh</p>
       </div>
     </RouterLink>
-    <RouterLink to="/animations">
+    <RouterLink to="/animations" :class="{ 'disabled' : device == 'mobile' }">
       <div class="row">
         <h2>Animations</h2>
         <p>Animate mesh</p>
       </div>
     </RouterLink>
-    <RouterLink to="/camera">
+    <RouterLink to="/camera" :class="{ 'disabled' : device == 'mobile' }">
       <div class="row">
         <h2>Camera</h2>
         <p>PerspectiveCamera, OrthographicCamera and OrbitControls</p>
       </div>
     </RouterLink>
-    <RouterLink to="/resizing">
+    <RouterLink to="/resizing" :class="{ 'disabled' : device == 'mobile' }">
       <div class="row">
-        <h2>Full screen and resizing</h2>
+        <h2>Resizing</h2>
         <p>how to correctly resize webGL canvas</p>
       </div>
     </RouterLink>
@@ -51,6 +51,9 @@
 // Import
 //==================================
 import { RouterLink } from "vue-router";
+import { getViewport } from '../utils/screen_size.mjs';
+
+const device = getViewport();
 
 </script>
 
@@ -66,13 +69,13 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%);
   max-height: 600px;
-  width: 80%;
-  min-width: 680px;
+  max-width: 1100px;
+  width: calc( 100% - 44px );
   overflow-y: scroll;
   .row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
     padding: 14px 22px;
     background-color: transparent;

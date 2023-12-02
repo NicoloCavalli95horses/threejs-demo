@@ -24,7 +24,7 @@ const aspect_ratio = computed(() => sizes.width / sizes.height );
 // GUI debug panel
 const gui = new GUI({
   // custom debug UI styling
-  width: 500,
+  width: 250,
   title: 'my debug UI',
   closeFolders: false, // close all by default or not
 });
