@@ -1,4 +1,5 @@
 <template>
+  <LoadingSpinner v-if="is_loading" />
   <canvas ref="canvas_ref" />
 </template>
 
@@ -9,6 +10,7 @@
 import { ref, reactive, computed, onMounted } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import LoadingSpinner from '../components/LoadingSpinner.vue';
 
 // ==============
 // Variables
@@ -24,6 +26,7 @@ const SRC_METALNESS_DOOR = BASE_URL + 'metalness.jpg';
 const SRC_NORMAL_DOOR    = BASE_URL + 'normal.jpg'; // it is usually png
 const SRC_ROUGHNESS_DOOR = BASE_URL + 'roughness.jpg';
 
+const is_loading   = ref( true );
 const canvas_ref   = ref(undefined);
 const sizes        = reactive({ width: window.innerWidth, height: window.innerHeight });
 const aspect_ratio = computed(() => sizes.width / sizes.height );
@@ -81,6 +84,7 @@ loadingManager.onProgress = function() {
 loadingManager.onLoad = function() {
   // will run once at the very end
   console.log('loaded');
+  is_loading.value = false;
 }
 loadingManager.onError = function() {
   // will run for eacth texture in case of error
