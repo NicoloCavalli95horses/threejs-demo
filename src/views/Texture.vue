@@ -15,7 +15,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // ==============
 const FOV = 75;
 const show_wireframe = false;
-const BASE_URL = '../../public/textures/';
+const BASE_URL = '/textures/';
 const SRC_ALPHA_DOOR     = BASE_URL + 'alpha.jpg';
 const SRC_AMBIENT_DOOR   = BASE_URL + 'ambient.jpg';
 const SRC_COLOR_DOOR     = BASE_URL + 'door.jpeg';
