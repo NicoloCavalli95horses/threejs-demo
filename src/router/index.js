@@ -52,6 +52,11 @@ const router = createRouter({
       name: "texture",
       component: () => import("../views/Texture.vue"),
     },
+    {
+      path: "/materials",
+      name: "materials",
+      component: () => import("../views/Materials.vue"),
+    },
   ],
 });
 

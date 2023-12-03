@@ -43,6 +43,12 @@
         <p>Adding texture and effects to geometries</p>
       </div>
     </RouterLink>
+    <RouterLink to="/materials">
+      <div class="row">
+        <h2>Material</h2>
+        <p>Create and apply materials</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 
