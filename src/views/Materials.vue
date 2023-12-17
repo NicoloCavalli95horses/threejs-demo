@@ -1,16 +1,18 @@
 <template>
   <canvas ref="canvas_ref" />
+  <LoadingSpinner v-if="is_loading" />
 </template>
 
 <script setup>
 // ==============
 // Import
 // ==============
-import { ref, reactive, computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'; // from three.js lib
 import GUI from 'lil-gui';
+import LoadingSpinner from '../components/LoadingSpinner.vue';
 
 // ==============
 // Variables
@@ -34,6 +36,7 @@ const SRC_GRADIENT = BASE_URL + 'gradients/3.jpg';
 const canvas_ref   = ref(undefined);
 const sizes        = reactive({ width: window.innerWidth, height: window.innerHeight });
 const aspect_ratio = computed(() => sizes.width / sizes.height );
+const is_loading   = ref( true );
 
 // Scene
 const scene = new THREE.Scene();
@@ -244,6 +247,7 @@ rgbeLoader.load( BASE_URL + 'environmentMap/2k.hdr', (environmentMap) => {
  environmentMap.mapping = THREE.EquirectangularReflectionMapping;
  scene.background = environmentMap;
  scene.environment = environmentMap;
+ is_loading.value = false;
 })
 
 
@@ -321,6 +325,8 @@ onMounted(() => {
 
   gameLoop();
 });
+
+onUnmounted(() => gui.hide());
 
 </script>
 
