@@ -243,7 +243,7 @@ scene.add(sphere, plane, torus);
 // environment map (after the scene is declared)
 // this map is an image in a special format (.hdr) that stores data about the light
 const rgbeLoader = new RGBELoader();
-rgbeLoader.load( BASE_URL + 'environmentMap/2k.hdr', (environmentMap) => {
+rgbeLoader.load( BASE_URL + 'environmentMap/sky.hdr', (environmentMap) => {
  environmentMap.mapping = THREE.EquirectangularReflectionMapping;
  scene.background = environmentMap;
  scene.environment = environmentMap;

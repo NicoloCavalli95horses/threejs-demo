@@ -49,6 +49,12 @@
         <p>Create and apply materials</p>
       </div>
     </RouterLink>
+    <RouterLink to="/text">
+      <div class="row">
+        <h2>3D text</h2>
+        <p>Display 3D texts and texts effects</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 
@@ -73,7 +79,7 @@ $title-h: 88px;
 }
 nav {
   max-width: 1100px;
-  width: calc( 100% - 44px );
+  width: 100%;
   height: calc( 90vh - $title-h - 24px );
   overflow-y: scroll;
   margin: 12px auto;
@@ -84,14 +90,13 @@ nav {
     grid-template-columns: 1fr 1fr;
     grid-gap: 12px;
     padding: 12px;
-    border-radius: var(--radius-s);
     height: calc( $title-h / 2);
     align-items: center;
     cursor: pointer;
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     &:hover {
-      background-color: var(--primary);
+      background-color: var(--primary-02);
       transition-duration: var(--transition-medium);
     }
   }

@@ -57,6 +57,11 @@ const router = createRouter({
       name: "materials",
       component: () => import("../views/Materials.vue"),
     },
+    {
+      path: "/text",
+      name: "text",
+      component: () => import("../views/Text.vue"),
+    },
   ],
 });
 
