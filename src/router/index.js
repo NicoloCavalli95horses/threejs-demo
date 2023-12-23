@@ -62,6 +62,16 @@ const router = createRouter({
       name: "text",
       component: () => import("../views/Text.vue"),
     },
+    {
+      path: "/light",
+      name: "light",
+      component: () => import("../views/Light.vue"),
+    },
+    {
+      path: "/shadow",
+      name: "shadow",
+      component: () => import("../views/Shadow.vue"),
+    },
   ],
 });
 

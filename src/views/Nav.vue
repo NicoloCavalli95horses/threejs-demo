@@ -55,6 +55,18 @@
         <p>Display 3D texts and texts effects</p>
       </div>
     </RouterLink>
+    <RouterLink to="/light">
+      <div class="row">
+        <h2>Lights</h2>
+        <p>Add lights to the scene and explore lights effects</p>
+      </div>
+    </RouterLink>
+    <RouterLink to="/shadow">
+      <div class="row">
+        <h2>Shadows</h2>
+        <p>Add shadows to the scene and explore shadows effects</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 
