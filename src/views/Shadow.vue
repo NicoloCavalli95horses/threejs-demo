@@ -72,34 +72,34 @@ scene.add(directionalLight, directionalCameraHelper);
 
 
 // spotlight
-const spotlight = new THREE.SpotLight(0xffffff, 3.6, 10, Math.PI * 0.3);
-spotlight.castShadow = true;
-spotlight.position.set(0, 2, 2);
-spotlight.shadow.mapSize.width = 1024;
-spotlight.shadow.mapSize.height = 1024;
-spotlight.shadow.camera.fov = 30;
-spotlight.shadow.camera.near = 2;
-spotlight.shadow.camera.far = 6;
-
-const spotlightCameraHelper = new THREE.CameraHelper(spotlight.shadow.camera);
-spotlightCameraHelper.visible = false;
-
-scene.add(spotlight, spotlight.target, spotlightCameraHelper);
+//const spotlight = new THREE.SpotLight(0xffffff, 3.6, 10, Math.PI * 0.3);
+//spotlight.castShadow = true;
+//spotlight.position.set(0, 2, 2);
+//spotlight.shadow.mapSize.width = 1024;
+//spotlight.shadow.mapSize.height = 1024;
+//spotlight.shadow.camera.fov = 30;
+//spotlight.shadow.camera.near = 2;
+//spotlight.shadow.camera.far = 6;
+//
+//const spotlightCameraHelper = new THREE.CameraHelper(spotlight.shadow.camera);
+//spotlightCameraHelper.visible = false;
+//
+//scene.add(spotlight, spotlight.target, spotlightCameraHelper);
 
 // Pointlight
-const pointLight = new THREE.PointLight(0xffffff, 2.7);
-pointLight.castShadow = true;
-pointLight.position.set(-1, 1, 0);
-pointLight.shadow.mapSize.width = 1024;
-pointLight.shadow.mapSize.height = 1024;
+// const pointLight = new THREE.PointLight(0xffffff, 2.7);
+// pointLight.castShadow = true;
+// pointLight.position.set(-1, 1, 0);
+// pointLight.shadow.mapSize.width = 1024;
+// pointLight.shadow.mapSize.height = 1024;
 
-pointLight.shadow.camera.near = 0.1;
-pointLight.shadow.camera.far = 5;
-scene.add(pointLight);
+// pointLight.shadow.camera.near = 0.1;
+// pointLight.shadow.camera.far = 5;
+// scene.add(pointLight);
 
-const pointLightCameraHelper = new THREE.CameraHelper(pointLight.shadow.camera);
-pointLightCameraHelper.visible = false;
-scene.add(pointLightCameraHelper);
+// const pointLightCameraHelper = new THREE.CameraHelper(pointLight.shadow.camera);
+// pointLightCameraHelper.visible = false;
+// scene.add(pointLightCameraHelper);
 
 // Material
 const material = new THREE.MeshStandardMaterial();

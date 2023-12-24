@@ -68,7 +68,6 @@
       </div>
     </RouterLink>
   </nav>
-  <div class="space" />
 </template>
 
 <script setup>
@@ -82,7 +81,7 @@ const device = getViewport();
 </script>
 
 <style lang="scss" scoped>
-$title-h: 220px;
+$title-h: 25vh;
 .title {
   width: 100%;
   text-align: center;
@@ -94,7 +93,7 @@ $title-h: 220px;
 nav {
   max-width: 1100px;
   width: 100%;
-  height: calc( 100vh - $title-h );
+  height: 60vh;
   overflow-y: scroll;
   margin: 0 auto;
   display: flex;
@@ -114,9 +113,5 @@ nav {
       transition-duration: var(--transition-medium);
     }
   }
-}
-.space {
-  width: 100%;
-  height: 80px;
 }
 </style>
