@@ -81,20 +81,21 @@ const device = getViewport();
 </script>
 
 <style lang="scss" scoped>
-$title-h: 88px;
+$title-h: 220px;
 .title {
   width: 100%;
   text-align: center;
   height: $title-h;
+  color: #ddd;
   display: grid;
   place-content: center;
 }
 nav {
   max-width: 1100px;
   width: 100%;
-  height: calc( 90vh - $title-h - 24px );
+  height: calc( 100vh - $title-h );
   overflow-y: scroll;
-  margin: 12px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   .row {
@@ -102,7 +103,7 @@ nav {
     grid-template-columns: 1fr 1fr;
     grid-gap: 12px;
     padding: 12px;
-    height: calc( $title-h / 2);
+    height: 66px;
     align-items: center;
     cursor: pointer;
     background-color: transparent;
