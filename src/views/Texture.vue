@@ -7,7 +7,7 @@
 // ==============
 // Import
 // ==============
-import { ref, reactive, computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import LoadingSpinner from '../components/LoadingSpinner.vue';
@@ -25,6 +25,7 @@ const SRC_HEIGHT_DOOR    = BASE_URL + 'height.png';
 const SRC_METALNESS_DOOR = BASE_URL + 'metalness.jpg';
 const SRC_NORMAL_DOOR    = BASE_URL + 'normal.jpg'; // it is usually png
 const SRC_ROUGHNESS_DOOR = BASE_URL + 'roughness.jpg';
+let animation_frame = undefined;
 
 const is_loading   = ref( true );
 const canvas_ref   = ref(undefined);
@@ -169,7 +170,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame( gameLoop );
+  animation_frame = window.requestAnimationFrame( gameLoop );
 }
 
 function onResize() {
@@ -214,6 +215,10 @@ onMounted(() => {
   controls = new OrbitControls( camera, canvas_ref.value );
   controls.enableDamping = true;
   gameLoop();
+});
+
+onUnmounted(() => {
+  cancelAnimationFrame( animation_frame );
 });
 
 </script>

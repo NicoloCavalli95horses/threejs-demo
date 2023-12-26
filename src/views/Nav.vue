@@ -67,6 +67,12 @@
         <p>Add shadows to the scene and explore shadows effects</p>
       </div>
     </RouterLink>
+    <RouterLink to="/model">
+      <div class="row">
+        <h2>Model</h2>
+        <p>Import and use an external Blender model</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 
@@ -98,6 +104,10 @@ nav {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  h2 {
+    letter-spacing: 1px;
+    color: var(--primary);
+  }
   .row {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -16,6 +16,7 @@ import GUI from "lil-gui";
 // ==============
 const FOV = 75;
 const gui = new GUI();
+let animation_frame = undefined;
 
 const canvas_ref = ref(undefined);
 const sizes = reactive({ width: window.innerWidth, height: window.innerHeight });
@@ -128,7 +129,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame(gameLoop);
+  animation_frame = window.requestAnimationFrame(gameLoop);
 }
 
 function onResize() {
@@ -185,7 +186,10 @@ onMounted(() => {
   gameLoop();
 });
 
-onUnmounted(() => gui.hide());
+onUnmounted(() => {
+  gui.hide();
+  cancelAnimationFrame( animation_frame );
+});
 
 </script>
 

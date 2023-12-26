@@ -21,6 +21,7 @@ const gui = new GUI();
 
 const FOV = 75;
 const show_wireframe = true;
+let animation_frame = undefined;
 
 const BASE_URL = '/material_textures/';
 const SRC_DOOR_COLOR = BASE_URL + 'door/color.jpg';
@@ -271,7 +272,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame( gameLoop );
+  animation_frame = window.requestAnimationFrame( gameLoop );
 }
 
 function onResize() {
@@ -326,7 +327,11 @@ onMounted(() => {
   gameLoop();
 });
 
-onUnmounted(() => gui.hide());
+
+onUnmounted(() => {
+  gui.hide();
+  cancelAnimationFrame( animation_frame );
+});
 
 </script>
 

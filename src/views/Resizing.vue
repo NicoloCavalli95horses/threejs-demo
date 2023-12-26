@@ -9,7 +9,7 @@
 // ==============
 // Import
 // ==============
-import { ref, reactive, computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -18,6 +18,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // ==============
 const FOV = 75;
 const show_wireframe = true;
+let animation_frame = undefined;
 
 const canvas_ref   = ref(undefined);
 const sizes        = reactive({ width: window.innerWidth, height: window.innerHeight });
@@ -51,7 +52,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame( gameLoop );
+  animation_frame = window.requestAnimationFrame( gameLoop );
 }
 
 function onResize() {
@@ -104,6 +105,10 @@ onMounted(() => {
   controls.enableDamping = true;
 
   gameLoop();
+});
+
+onUnmounted(() => {
+  cancelAnimationFrame( animation_frame );
 });
 
 </script>

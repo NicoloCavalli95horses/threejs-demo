@@ -21,6 +21,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 // const gui = new GUI();
 
 const FOV = 75;
+let animation_frame = undefined;
 
 const canvas_ref = ref(undefined);
 const sizes = reactive({
@@ -111,7 +112,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame(gameLoop);
+  animation_frame = window.requestAnimationFrame(gameLoop);
 }
 
 function onResize() {
@@ -165,6 +166,10 @@ onMounted(() => {
   controls.enableDamping = true;
 
   gameLoop();
+});
+
+onUnmounted(() => {
+  cancelAnimationFrame( animation_frame );
 });
 
 </script>

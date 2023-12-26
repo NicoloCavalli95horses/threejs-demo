@@ -16,7 +16,7 @@
 // ==============
 // Import
 // ==============
-import { ref, onMounted, computed, onUpdated } from "vue";
+import { ref, onMounted, computed, onUpdated, onUnmounted } from "vue";
 import * as THREE from "three";
 import SwitchBtn from '../components/SwitchBtn.vue';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -34,6 +34,7 @@ const left = aspect_ratio*-1;
 const right = aspect_ratio*1;
 const top = 1;
 const bottom = -1;
+let animation_frame = undefined;
 
 const camera = computed( () => {
   return is_perspective.value
@@ -109,7 +110,7 @@ scene.add(mesh);
 function gameLoop() {
   updateObject(); // update mesh
   renderer.render(scene, camera.value); // call rendered
-  window.requestAnimationFrame( gameLoop ); // default: 60 FPS
+  animation_frame = window.requestAnimationFrame( gameLoop ); // default: 60 FPS
 }
 
 function updateObject() {
@@ -138,6 +139,10 @@ onMounted(() => {
   renderer.render(scene, camera.value);
   gameLoop();
 });
+
+onUnmounted(() => {
+  cancelAnimationFrame( animation_frame );
+})
 
 </script>
 

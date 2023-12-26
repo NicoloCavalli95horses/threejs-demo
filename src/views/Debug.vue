@@ -20,6 +20,7 @@ const show_wireframe = true;
 const canvas_ref   = ref(undefined);
 const sizes        = reactive({ width: window.innerWidth, height: window.innerHeight });
 const aspect_ratio = computed(() => sizes.width / sizes.height );
+let animation_frame = undefined;
 
 // GUI debug panel
 const gui = new GUI({
@@ -122,7 +123,7 @@ function updateScene() {
 function gameLoop() {
   updateScene();
   renderer.render(scene, camera);
-  window.requestAnimationFrame( gameLoop );
+  animation_frame = window.requestAnimationFrame( gameLoop );
 }
 
 function onResize() {
@@ -180,7 +181,10 @@ onMounted(() => {
   gameLoop();
 });
 
-onUnmounted(() => gui.hide());
+onUnmounted(() => {
+  gui.hide();
+  cancelAnimationFrame( animation_frame );
+});
 
 </script>
 

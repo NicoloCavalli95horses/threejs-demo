@@ -6,7 +6,7 @@
 // ==============
 // Import
 // ==============
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import * as THREE from "three";
 
 // ==============
@@ -17,6 +17,7 @@ const fov = 75;
 const sizes = { width: window.innerWidth, height: window.innerHeight };
 const aspect_ratio = sizes.width / sizes.height;
 const show_wireframe = true;
+const animation_frame = undefined;
 
 // Scene
 const scene = new THREE.Scene();
@@ -46,7 +47,7 @@ const clock = new THREE.Clock();
 function gameLoop() {
   updateObject(); // update mesh
   renderer.render(scene, camera); // call rendered
-  window.requestAnimationFrame( gameLoop ); // default: 60 FPS
+  animation_frame = window.requestAnimationFrame( gameLoop ); // default: 60 FPS
 }
 
 function updateObject() {
@@ -72,4 +73,8 @@ onMounted(() => {
   camera.position.z = 3;
   gameLoop()  
 });
+
+onUnmounted(() => {
+  cancelAnimationFrame( animation_frame );
+})
 </script>

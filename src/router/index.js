@@ -72,6 +72,11 @@ const router = createRouter({
       name: "shadow",
       component: () => import("../views/Shadow.vue"),
     },
+    {
+      path: "/model",
+      name: "model",
+      component: () => import("../views/Model.vue"),
+    },
   ],
 });
 
