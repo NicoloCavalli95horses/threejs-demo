@@ -73,6 +73,12 @@
         <p>Import and use an external Blender model</p>
       </div>
     </RouterLink>
+    <RouterLink to="/particle">
+      <div class="row">
+        <h2>Particle effect</h2>
+        <p>Point object and particle system</p>
+      </div>
+    </RouterLink>
   </nav>
 </template>
 

@@ -77,6 +77,11 @@ const router = createRouter({
       name: "model",
       component: () => import("../views/Model.vue"),
     },
+    {
+      path: "/particle",
+      name: "particle",
+      component: () => import("../views/Particle.vue"),
+    },
   ],
 });
 
